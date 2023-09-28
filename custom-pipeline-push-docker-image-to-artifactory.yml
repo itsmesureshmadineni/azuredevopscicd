@@ -43,9 +43,9 @@ stages:
      ## copying the files
     - task: CopyFiles@2
       inputs:
-        SourceFolder: 'System.DefaultWorkingDirectory/**'
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
         Contents: '**'
-        TargetFolder: 'Build.ArtifactStagingDirectory'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
         OverWrite: true
     - bash: echo After copying to Build Artifact Directory; ls -R $(Build.ArtifactStagingDirectory) 
     ## publish artifacts
